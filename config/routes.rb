@@ -5,6 +5,10 @@ Ticketee::Application.routes.draw do
   get '/awaiting_confirmation',
     :to => "users#confirmation",
     :as => 'confirm_user'
+    
+  put '/admin/users/:user_id/permissions',
+    :to => 'admin/permissions#update',
+    :as => :update_user_permissions
 
   resources :projects do
     resources :tickets
@@ -14,7 +18,9 @@ Ticketee::Application.routes.draw do
   
   namespace :admin do
     root :to => "base#index"
-    resources :users
+    resources :users do
+      resource :permissions
+    end
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
