@@ -9,7 +9,6 @@ Feature: Managing states
 		
 	Scenario: Marking a state as default
 		Given I am on the homepage
-		Then show me the page
 		When I follow "Admin"
 		And I follow "States"
 		And I follow "Make default" for the "New" state
