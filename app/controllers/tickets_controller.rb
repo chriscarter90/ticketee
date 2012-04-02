@@ -15,7 +15,12 @@ class TicketsController < ApplicationController
   def create
     @ticket = @project.tickets.build(params[:ticket].merge!(:user => current_user))
     if @ticket.save
-      @ticket.tag!(params[:tags])
+      # Hacked in this conditional to make the tests pass
+      # If a user without permission to change tags submits a ticket/comment,
+      # params[:tags] are null :(
+      if (params[:tags])
+        @ticket.tag!(params[:tags])
+      end
       flash[:notice] = "Ticket has been created."
       redirect_to [@project, @ticket]
     else

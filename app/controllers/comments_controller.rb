@@ -9,6 +9,12 @@ class CommentsController < ApplicationController
     end
     @comment = @ticket.comments.build(params[:comment].merge(:user => current_user))
     if @comment.save
+      # Hacked in this conditional to make the tests pass
+      # If a user without permission to change tags submits a ticket/comment,
+      # params[:tags] are null :(
+      if (params[:tags])
+        @ticket.tag!(params[:tags])
+      end
       flash[:notice] = "Comment has been created."
       redirect_to [@ticket.project, @ticket]
     else
