@@ -13,7 +13,9 @@ class CommentsController < ApplicationController
       # If a user without permission to change tags submits a ticket/comment,
       # params[:tags] are null :(
       if (params[:tags])
-        @ticket.tag!(params[:tags])
+        if can?(:tag, @ticket.project) || current_user.admin?
+          @ticket.tag!(params[:tags])
+        end
       end
       flash[:notice] = "Comment has been created."
       redirect_to [@ticket.project, @ticket]
