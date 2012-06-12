@@ -11,10 +11,10 @@ gem 'sqlite3'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'dynamic_form'
   gem 'uglifier'
+  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'
@@ -40,7 +40,9 @@ group :test do
   gem 'email_spec'
 end
 
+gem 'ruby-debug19'
 gem 'devise', '~> 1.4.3'
 gem 'cancan'
 gem 'launchy'
 gem 'paperclip'
+gem 'searcher'
