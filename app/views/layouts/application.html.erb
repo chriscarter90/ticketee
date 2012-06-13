@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>
-    <% if content_for?(:title) %>
-      <%= yield(:title) %>
-    <% else %>
-      Ticketee
-    <% end %>
-  </title>
-  <%= stylesheet_link_tag    "application" %>
-  <style>
-    <% for state in @states %>
-      .state_<%= state.name.parameterize %> {
-        background: <%= state.background %>;
-        color: <%= state.color %>;
-      }
-    <% end %>
-  </style>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<%= render 'shared/topnav' %>
-<body>
+  <head>
+    <title>
+      <% if content_for?(:title) %>
+        <%= yield(:title) %>
+      <% else %>
+        Ticketee
+      <% end %>
+    </title>
+    <%= stylesheet_link_tag    "application" %>
+    <style>
+      <% for state in @states %>
+        .state_<%= state.name.parameterize %> {
+          background: <%= state.background %>;
+          color: <%= state.color %>;
+        }
+      <% end %>
+    </style>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<% flash.each do |key, value| %>
-
-  <div class = 'flash' id='<% key %>'>
-    <%= value %>
-  </div>
-
-<% end %>
-<%= yield %>
-
-</body>
+  <body>
+    <%= render 'shared/topnav' %>
+    <div id="main-wrapper">
+      <div id="main-sections-wrapper">
+        <div id="main-section-wrapper" class="container">
+          <%= render "shared/page_header" %>
+          <div class="row row-fluid">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

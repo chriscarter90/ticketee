@@ -1,0 +1,17 @@
+.flash {
+  font-weight: bold;
+}
+
+#ticket menu {
+  font-size: 75%;
+}
+
+.state {
+  font-weight: bold;
+  font-size: 80%;
+}
+
+#ticket .tag .delete {
+  font-size: 125%;
+  text-decoration: none;
+}
