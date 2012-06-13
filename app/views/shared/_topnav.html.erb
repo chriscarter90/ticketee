@@ -6,9 +6,33 @@
           Ticketee
         </a>
         <ul class="nav">
-          <li class="active">
+          <li>
             <a href="#">Home</a>
           </li>
+          <% admins_only do %>
+            <li>
+              <a href="<%= admin_root_path %>">Admin</a>
+            </li>
+          <% end %>
+          <li class="divider-vertical"></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li class="divider-vertical"></li>
+          <% if user_signed_in? %>
+            <li>
+              <a href="">Signed in as <strong><%= current_user.email %></strong></a>
+            </li>
+            <li>
+              <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+            </li>
+          <% else %>
+            <li>
+              <a href="<%= new_user_registration_path %>">Sign up</a>
+            </li>
+            <li>
+              <a href="<%= new_user_session_path %>">Sign in</a>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
