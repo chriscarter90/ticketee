@@ -17,7 +17,6 @@ Feature: Deleting tags
     Given I am on the homepage
     When I follow "Ticketee" within "#projects"
     And I follow "A tag"
-    And show me the page
 
     @javascript
     Scenario: Deleting a tag

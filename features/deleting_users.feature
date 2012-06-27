@@ -19,6 +19,6 @@ Feature: Deleting users
     Then I should see "User has been deleted."
     
   Scenario: Users cannot delete themselves
-    When I follow "admin@ticketee.com"
+    When I follow "admin@ticketee.com (Admin)"
     And I follow "Delete User"
     Then I should see "You cannot delete yourself!"
