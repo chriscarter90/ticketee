@@ -23,13 +23,11 @@
 
   <body>
     <%= render 'shared/topnav' %>
-    <div id="main-wrapper">
-      <div id="main-sections-wrapper">
-        <div id="main-section-wrapper" class="container">
-          <%= render "shared/page_header" %>
-          <div class="row row-fluid">
-            <%= yield %>
-          </div>
+    <div id="main-section-wrapper" class="container">
+      <%= render "shared/page_header" %>
+      <div class="row">
+        <div class="span12">
+          <%= yield %>
         </div>
       </div>
     </div>
