@@ -1,4 +1,4 @@
-Feature: Viewing projects where there are non
+Feature: Viewing projects when there are none
   In order to view projects
   As a user
   I want to be informed if there are no projects in the system
