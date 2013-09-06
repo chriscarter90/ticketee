@@ -15,3 +15,7 @@
   font-size: 125%;
   text-decoration: none;
 }
+
+.project-pill a {
+  font-size: 13pt;
+}
