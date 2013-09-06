@@ -5,10 +5,16 @@
   <% end %>
 <% end %>
 
-<ul class='nav nav-pills nav-stacked' id='projects'>
-  <% for project in @projects %>
-    <li class='project-pill'>
-      <%= link_to project.name, project %>
-    </li>
-  <% end %>
-</ul>
+<% if @projects.empty? %>
+  <div class='alert'>
+    There are no projects. Click <%= link_to "here", new_project_path %> to create one.
+  </div>
+<% else %>
+  <ul class='nav nav-pills nav-stacked' id='projects'>
+    <% for project in @projects %>
+      <li class='project-pill'>
+        <%= link_to project.name, project %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
