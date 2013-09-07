@@ -1,4 +1,8 @@
 <% title("New Project") %>
 <% header_title("New Project") %>
 
+<% content_for :functionality do %>
+  <%= back_button("projects", projects_path) %>
+<% end %>
+
 <%= render "form" %>
