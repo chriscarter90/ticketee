@@ -8,8 +8,10 @@
 
 <ul class='nav nav-pills nav-stacked' id='states'>
   <% for state in @states %>
-    <li id='state_<%= state.id %>'>
-      <%= state.name %>
+    <li id='state_<%= state.id %>' class='state-pill'>
+      <p>
+        <%= state.name %>
+      </p>
       <%= link_to "Make default", make_default_admin_state_path(state) %>
     </li>
   <% end %>

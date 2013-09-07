@@ -17,7 +17,9 @@
 }
 
 .project-pill a,
-.user-pill a {
+.user-pill a,
+.state-pill a,
+.state-pill p {
   font-size: 13pt;
 }
 
