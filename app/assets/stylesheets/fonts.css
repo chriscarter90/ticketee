@@ -16,6 +16,11 @@
   text-decoration: none;
 }
 
-.project-pill a {
+.project-pill a,
+.user-pill a {
+  font-size: 13pt;
+}
+
+#admin-pills li a {
   font-size: 13pt;
 }
