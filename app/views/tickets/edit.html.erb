@@ -1,2 +1,4 @@
-<h2>Editing a ticket in <%= @project.name %></h2>
+<% title(@project.name, "Edit Ticket") %>
+<% header_title("Edit Ticket") %>
+
 <%= render "form" %>
