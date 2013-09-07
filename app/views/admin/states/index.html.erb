@@ -1,6 +1,12 @@
-<%= link_to "New State", new_admin_state_path %>
+<% title("States", "Admin Lounge") %>
+<% header_title("States") %>
 
-<ul id='states'>
+<% content_for :functionality do %>
+  <%= link_to "New State", new_admin_state_path, :class => 'btn btn-success' %>
+  <%= back_button("Admin Lounge", admin_root_path) %>
+<% end %>
+
+<ul class='nav nav-pills nav-stacked' id='states'>
   <% for state in @states %>
     <li id='state_<%= state.id %>'>
       <%= state.name %>
