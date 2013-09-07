@@ -1,3 +1,13 @@
-<%= link_to "Users", admin_users_path %>
-<%= link_to "States", admin_states_path %>
+<% title("Admin Lounge") %>
+<% header_title("Admin Lounge") %>
+
 Welcome to Ticketee's Admin Lounge. Please enjoy your stay.
+
+<ul class='nav nav-pills nav-stacked'>
+  <li>
+    <%= link_to "Users", admin_users_path %>
+  </li>
+  <li>
+    <%= link_to "States", admin_states_path %>
+  </li>
+</ul>
