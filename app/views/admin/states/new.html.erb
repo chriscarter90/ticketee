@@ -1,2 +1,8 @@
-<h1>New State</h1>
+<% title("New State", "Admin Lounge") %>
+<% header_title("New State") %>
+
+<% content_for :functionality do %>
+  <%= back_button("states", admin_states_path) %>
+<% end %>
+
 <%= render "form" %>
