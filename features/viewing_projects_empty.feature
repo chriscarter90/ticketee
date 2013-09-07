@@ -11,5 +11,4 @@ Feature: Viewing projects when there are none
 
   Scenario: Viewing projects when there are none
     And I am on the homepage
-    And show me the page
     Then I should see "There are no projects. Click here to create one."

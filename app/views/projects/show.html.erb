@@ -11,11 +11,20 @@
   <% end %>
 <% end %>
 
-<ul id='tickets'>
-  <% @project.tickets.each do |ticket| %>
-    <li>
-      <%= render ticket.state if ticket.state %>
-      #<%= ticket.id %> - <%= link_to ticket.title, [@project, ticket] %>
-    </li>
-  <% end %>
-</ul>
+<% if @project.tickets.empty? %>
+  <div class='alert'>
+    There are no tickets.
+    <%= authorized?("create tickets".to_sym, @project) do %>
+      Click <%= link_to 'here', new_project_ticket_path(@project) %> to create one.
+   <% end %>
+  </div>
+<% else %>
+  <ul class='nav nav-pills nav-stacked' id='tickets'>
+    <% @project.tickets.each do |ticket| %>
+      <li>
+        <%= render ticket.state if ticket.state %>
+        #<%= ticket.id %> - <%= link_to ticket.title, [@project, ticket] %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
