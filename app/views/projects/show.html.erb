@@ -6,7 +6,7 @@
     <%= link_to "New Ticket", new_project_ticket_path(@project), :class => 'btn btn-success' %>
   <% end %>
   <%= admins_only do %>
-    <%= link_to "Edit Project", edit_project_path(@project), :class => 'btn btn-primary' %>
+    <%= link_to "Edit Project", edit_project_path(@project), :class => 'btn btn-warning' %>
     <%= link_to "Delete Project", @project, :method => :delete, :confirm => "Are you sure you want to delete this project?", :class => 'btn btn-danger' %>
   <% end %>
   <%= back_button("projects", projects_path) %>
