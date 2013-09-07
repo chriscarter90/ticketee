@@ -23,7 +23,8 @@
   font-size: 13pt;
 }
 
-#admin-pills li a {
+#admin-pills li a,
+#user-details-pills li a {
   font-size: 13pt;
 }
 
